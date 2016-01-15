@@ -1,28 +1,46 @@
 <!doctype html>
-<html ng-app>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  </head>
-  <body>
-    <div ng-repeat="n in [42, 42, 43, 43] track by $index">
+<html ng-app="demo">
 
-<div> What is the next activity? </div>
-      <input type="text" ng-model="next_activity" placeholder="Put an activity'">
+<head>
 
-     <div> When is {{next_activity}}? </div>
+  <style>
+    .slick-prev:before,
+    .slick-next:before {
+      color: red !important;
+    }
+  </style>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+  <script src="slick.min.js"></script>
+  <script src="script.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" />
+</head>
+
+<body ng-controller="Ctrl">
+  <slick arrows="true">
+    <div ng-repeat="n in [1,2,3,4]">
+      <div> What is the next activity? </div>
+      <input type="text" ng-model="next_activity" placeholder="Put an activity">
+
+      <div> When is {{next_activity}}? </div>
       <input type="text" ng-model="breakfasttime" placeholder="This defaults to 'After waking'">
       <div> What if the previous activity has been completed but it is too early? </div>
-     <input type="text" ng-model="breakearly" placeholder="This defaults to N/A">
+      <input type="text" ng-model="breakearly" placeholder="This defaults to N/A">
 
-     <div> What is {{next_activity}}? </div>
-     <input type="text" ng-model="breakfastfood" placeholder="This defaults to cereal">
+      <div> What is {{next_activity}}? </div>
+      <input type="text" ng-model="breakfastfood" placeholder="This defaults to cereal">
 
-     <div> Backup {{next_activity}}? </div>
-     <input type="text" ng-model="backupbreakfastfood" placeholder="This defaults to N/A">
+      <div> Backup {{next_activity}}? </div>
+      <input type="text" ng-model="backupbreakfastfood" placeholder="This defaults to N/A">
 
-     <div> What if the baby refuses to ever {{next_activity}} again? </div>
-     <input type="text" ng-model="panic" placeholder="This defaults to N/A">
-     <div> {{waketime}}</div>
-</div>
-  </body>
+      <div> What if the baby refuses to ever {{next_activity}} again? </div>
+      <input type="text" ng-model="panic" placeholder="This defaults to N/A">
+      <div> {{waketime}}</div>
+    </div>
+  </slick>
+</body>
+
 </html>
