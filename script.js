@@ -4,7 +4,7 @@ angular.module('baeDay', [])
     baeDay.activities = [];
 
     baeDay.addActivity = function() {
-      baeDay.activities.push({text:baeDay.activityText});
+      baeDay.activities.push({name:baeDay.activityName});
       baeDay.activityText = '';
     };
   });

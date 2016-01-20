@@ -6,13 +6,13 @@
   </head>
     <div ng-controller="BaeDayController as baeDay">
     <form ng-submit="baeDay.addActivity()">
-        <input type="text" ng-model="baeDay.activityText"  size="30"
+        <input type="text" ng-model="baeDay.activityName"  size="30"
                placeholder="add new activity here">
         <input class="btn-primary" type="submit" value="add">
       </form>
       <ul class="unstyled">
         <li ng-repeat="activity in baeDay.activities">
-          <span>{{activity.text}}</span>
+          <span>{{activity.name}}</span>
         </li>
       </ul>
     </div>
