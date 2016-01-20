@@ -1,10 +1,10 @@
-// Code goes here
-var app = angular.module('demo',['slick']);
+angular.module('baeDay', [])
+  .controller('BaeDayController', function() {
+    var baeDay = this;
+    baeDay.activities = [];
 
-app.controller('Ctrl', function($scope) {
-  $scope.images = [
-    "http://vasyabigi.github.io/angular-slick/images/lazyfonz1.png",
-    "http://vasyabigi.github.io/angular-slick/images/lazyfonz2.png",
-    "http://vasyabigi.github.io/angular-slick/images/lazyfonz3.png",
-    ];
-});
+    baeDay.addActivity = function() {
+      baeDay.activities.push({text:baeDay.activityText});
+      baeDay.activityText = '';
+    };
+  });
