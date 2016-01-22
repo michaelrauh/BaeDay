@@ -8,11 +8,24 @@
     <form ng-submit="baeDay.addActivity()">
         <input type="text" ng-model="baeDay.activityName"  size="30"
                placeholder="add new activity here">
+        <p> {{baeDay.activityName}} </p>
         <input class="btn-primary" type="submit" value="add">
       </form>
       <ul class="unstyled">
         <li ng-repeat="activity in baeDay.activities">
           <span>{{activity.name}}</span>
+          <input type="text" ng-model="activity.time"  size="30"
+                 placeholder="When is this activity?">
+        <p> {{activity.time}} </p>
+          <input type="text" ng-model="activity.early"  size="30"
+                 placeholder="What if the previous stops early?">
+        <p> {{activity.early}} </p>
+          <input type="text" ng-model="activity.backup"  size="30"
+                 placeholder="What is a backup activity?">
+        <p> {{activity.backup}} </p>
+          <input type="text" ng-model="activity.panic"  size="30"
+                 placeholder="What if everything goes horribly wrong?">
+        <p> {{activity.panic}} </p>
         </li>
       </ul>
     </div>
